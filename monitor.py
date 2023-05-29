@@ -27,7 +27,7 @@ def save_snapshot() -> None:
         'disk': disk_usage_percent,
         'procs': str(sorted(proc_mem, key=lambda p: p[0])[::-1][::10])
     }
-    with open('memory.log', 'a') as f:
+    with open('/var/log/memory.log', 'a') as f:
         f.write(str(result) + '\n')
 
 while True:
