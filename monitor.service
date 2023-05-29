@@ -1,0 +1,13 @@
+[Unit]
+Description=Monitor Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/opt/monitor
+ExecStart=/bin/sh -c 'python3 /opt/monitor/monitor.py'
+
+[Install]
+WantedBy=multi-user.target
